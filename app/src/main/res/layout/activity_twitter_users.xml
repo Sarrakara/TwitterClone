@@ -18,6 +18,7 @@
         app:srcCompat="@drawable/twitter_logo" />
 
     <ListView
+        android:id="@+id/listView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"

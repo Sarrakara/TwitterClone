@@ -57,6 +57,13 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
         txtLoginActivity.setOnClickListener(SignUpActivity.this);
         rootLayout.setOnClickListener(SignUpActivity.this);
 
+        // Here I'm simply making sure that the parse user is valid and logged in.
+        // If the parse user is valid,
+        if(ParseUser.getCurrentUser() != null){
+            transitionToTwitterUsersActivity();
+          //  ParseUser.getCurrentUser().logOut();
+        }
+
 
 
     }
@@ -96,6 +103,7 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
                                 edtSignupEmail.setText("");
                                 edtSignupUsername.setText("");
                                 edtSignupPassword.setText("");
+                                transitionToTwitterUsersActivity();
                             } else {
                                 FancyToast.makeText(SignUpActivity.this,
                                         "there was an error " + e.getMessage(),
@@ -124,5 +132,12 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
                 getSystemService(INPUT_METHOD_SERVICE);
         inputMethodManager.hideSoftInputFromWindow(view.getWindowToken(),0);
 
+    }
+
+    private void transitionToTwitterUsersActivity(){
+        Intent intent = new Intent(SignUpActivity.this, TwitterUsers.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(intent);
+        finish();
     }
 }

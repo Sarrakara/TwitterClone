@@ -1,7 +1,6 @@
 package com.example.twitterclone;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.ButtonBarLayout;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.app.ProgressDialog;
@@ -16,7 +15,7 @@ import android.widget.TextView;
 
 import com.parse.LogInCallback;
 import com.parse.ParseException;
-import com.parse.ParseQuery;
+
 import com.parse.ParseUser;
 import com.shashank.sony.fancytoastlib.FancyToast;
 
@@ -57,6 +56,13 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         txtSignupActivity.setOnClickListener(LoginActivity.this);
         rootLayout.setOnClickListener(LoginActivity.this);
 
+        // Here I'm simply making sure that the parse user is valid and logged in.
+        // If the parse user is valid,
+        if(ParseUser.getCurrentUser() != null){
+            //transitionToTwitterUsersActivity();
+            ParseUser.getCurrentUser().logOut();
+        }
+
     }
 
     @Override
@@ -93,6 +99,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                                                 false).show();
                                         edtLoginEmail.setText("");
                                         edtLoginPassword.setText("");
+                                        transitionToTwitterUsersActivity();
+
                                     } else {
 
                                         FancyToast.makeText(LoginActivity.this, e.getMessage(),
@@ -119,5 +127,11 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                     getSystemService(INPUT_METHOD_SERVICE);
             inputMethodManager.hideSoftInputFromWindow(view.getWindowToken(),0);
 
+        }
+
+        private void transitionToTwitterUsersActivity(){
+            Intent intent = new Intent(LoginActivity.this, TwitterUsers.class);
+            startActivity(intent);
+            finish();
         }
     }
