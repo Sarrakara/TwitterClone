@@ -9,6 +9,7 @@
     <string name="already_have_an_account_log_in">Already have an account? <b>Log in</b></string>
     <string name="email">Email</string>
     <string name="username">Username</string>
-    <string name="send_a_tweet">send a tweet...</string>
-    <string name="send">Send</string>
+    <string name="view_other_users_tweets">View other users\' tweets</string>
+    <string name="share_a_tweet">Share a tweet…</string>
+    <string name="share">Share</string>
 </resources>

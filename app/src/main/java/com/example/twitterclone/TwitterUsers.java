@@ -11,13 +11,10 @@ import android.view.View;
 import android.widget.AbsListView;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.CheckedTextView;
 import android.widget.ListView;
 
 import com.parse.FindCallback;
-import com.parse.LogOutCallback;
-import com.parse.Parse;
 import com.parse.ParseException;
 import com.parse.ParseQuery;
 import com.parse.ParseUser;
@@ -117,7 +114,7 @@ public class TwitterUsers extends AppCompatActivity implements AdapterView.OnIte
                 });
                 break;
             case  R.id.sendTweetItem:
-                Intent intent = new Intent(TwitterUsers.this, SendTweetActivity.class);
+                Intent intent = new Intent(TwitterUsers.this, ShareTweetActivity.class);
                 startActivity(intent);
                 break;
         }
