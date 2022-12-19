@@ -9,4 +9,6 @@
     <string name="already_have_an_account_log_in">Already have an account? <b>Log in</b></string>
     <string name="email">Email</string>
     <string name="username">Username</string>
+    <string name="send_a_tweet">send a tweet...</string>
+    <string name="send">Send</string>
 </resources>

@@ -117,8 +117,9 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
 
                 break;
             case R.id.txtLoginActivity:
-                Intent intent = new Intent(SignUpActivity.this, LoginActivity.class);
-                startActivity(intent);
+              //  Intent intent = new Intent(SignUpActivity.this, LoginActivity.class);
+               // startActivity(intent);
+                onBackPressed();
 
             case R.id.rootLayout:
                 hideKeyboard(rootLayout);
@@ -136,7 +137,6 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
 
     private void transitionToTwitterUsersActivity(){
         Intent intent = new Intent(SignUpActivity.this, TwitterUsers.class);
-        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(intent);
         finish();
     }
