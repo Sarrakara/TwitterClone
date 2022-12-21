@@ -71,7 +71,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         switch (view.getId()) {
             case R.id.btnLogin:
 
-                if (edtLoginPassword.getText().toString().equals("") &&
+                if (edtLoginPassword.getText().toString().equals("") ||
                         edtLoginPassword.getText().toString().equals("")) {
 
                     FancyToast.makeText(LoginActivity.this,

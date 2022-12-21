@@ -12,4 +12,5 @@
     <string name="view_other_users_tweets">View other users\' tweets</string>
     <string name="share_a_tweet">Share a tweet…</string>
     <string name="share">Share</string>
+    <string name="log_in">Log in</string>
 </resources>
